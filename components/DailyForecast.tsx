@@ -1,12 +1,15 @@
-// import React from 'react'
+import React from 'react'
 
-// export default function DailyForecast() {
-//   return (
-//     <div>
-//       DailyForecast
-//     </div>
-//   )
-// }
+export default function DailyForecast() {
+  return (
+    <>
+    <div>
+        DailyForecast
+    </div>
+    
+    </>
+  )
+}
 
 
 
