@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react';
 import Image from "next/image";
 import Header from '@/components/Header';
@@ -30,15 +32,24 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [initialLoading, setInitialLoading] = useState(true);
 
-  const handleSearch = async (searchTerm) => {};
-  const handleLocationSelect =  (locationData) => {};
+  // const handleSearch = async (searchTerm) => {};
+  // const handleLocationSelect =  (locationData) => {};
   const loadWeatherData = async () => {};
 
   useEffect(() => {
     loadWeatherData();
-  }, [location, units ])
+  }, [location, units ]);
   //useEffect, any time "location or units" change, the "loadWeatherData()" will activate again
-  
+
+  const toggleUnits = () => {
+    setUnits(units === "metric" ? "imperial" : "metric");
+  };
+
+  // if (initialLoading) {
+  //   return <LoadingState />
+  // }
+
+
 
 
 
@@ -49,7 +60,24 @@ export default function Home() {
 
   return (
   <>
+  <div className="min-h-screen text-white">
+    <div className="">
+      <Header />
+      
+    </div>
+    
 
+    <Search />
+    <CurrentWeather />
+    <Metrics />
+    <DailyForecast />
+    <HourlyForecast />
+
+
+
+    
+  </div>
+  
   </>
   );
 }

@@ -2,14 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
-
-
-
-
+body {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  background: hsl(243, 96%, 9%);
+}
 /* 
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -38,4 +39,5 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-} */
+}  
+  */

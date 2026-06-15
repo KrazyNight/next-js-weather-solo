@@ -1,11 +1,28 @@
-import React from 'react'
+"use client"
+import React from 'react';
+import Image from 'next/image';
+import logo from "../assets/images/logo.svg";
+import unitsIcon from "../assets/images/icon-units.svg";
+import dropdown from "../assets/images/icon-dropdown.svg";
+import checkmark from "../assets/images/icon-checkmark.svg";
+
+import { useState } from "react";
+
 
 export default function Header() {
   return (
     <>
-    <div>
-        Header
-    </div>
+    <header className=" ">
+      <div>
+        <Image 
+        src={logo}
+        alt="Weather now logo"
+        className="w-40 sm:w-auto"
+        />
+      </div>
+      Header 
+
+    </header>
       
     </>
   )
