@@ -40,7 +40,7 @@ export default function Header({ units, onToggleUnits }: HeaderProps) {
         />
       </div>
 
-      <div className="">
+      <div className="relative">
       {/* <div className="relative"> */}
         <button 
         className='flex items-center glass-card space-x-2 px-4 py-2 rounded-lg hover:bg-white/20 transition-all duration-200'
@@ -64,24 +64,23 @@ export default function Header({ units, onToggleUnits }: HeaderProps) {
 
         </button>
         {isDropdownOpen && (
-          <div>
-            hu\i
+          <div className='absolute right-0 glass-card mt-2 rounded-lg w-48 z-50 text-sm'>
+            <div className="p-4">
+              <div className="flex items-center justify-between mb-4">
+                <button
+                className="glass-card p-2 rounded-lg w-full "
+                onClick={() => {
+                    onToggleUnits();
+                    setIsDropdownOpen(false);
+                  }}
+                >
+                  Switch to {units === "metric" ? "Imperial" : "Metric"}
+
+                </button>
+              </div>
+            </div>
           </div>
-          // <div className="absolute right-0 mt-2 w-48 glass-card rounded-lg z-50 text-sm">
-          // <div className="p-4">
-          //   <div className="flex items-center justify-between mb-4">
-          //       <button
-          //         onClick={() => {
-          //           onToggleUnits();
-          //           setIsDropdownOpen(false);
-          //         }}
-          //         className="text-white glass-card p-2 rounded-lg transition-colors w-full"
-          //       >
-          //         Switch to {units === "metric" ? "Imperial" : "Metric"}
-          //       </button>
-          //   </div>
-          // </div>
-          // </div>
+         
 
 
 
