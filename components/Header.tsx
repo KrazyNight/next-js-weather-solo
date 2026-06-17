@@ -1,4 +1,5 @@
 "use client"
+
 import React from 'react';
 import Image from 'next/image';
 import logo from "../assets/images/logo.svg";
@@ -63,12 +64,14 @@ export default function Header({ units, onToggleUnits }: HeaderProps) {
           />
 
         </button>
+
         {isDropdownOpen && (
           <div className='absolute right-0 glass-card mt-2 rounded-lg w-48 z-50 text-sm'>
-            <div className="p-4">
-              <div className="flex items-center justify-between mb-4">
+            <div className="p-4 space-y-4">
+              <div className="flex items-center justify-between mb-2">
                 <button
-                className="glass-card p-2 rounded-lg w-full "
+                // className="glass-card p-2 rounded-lg w-full "
+                className='text-white bg-blue-600 hover:bg-blue-800 font-medium py-2 px-3 rounded-lg transition-colors w-full text-center block text-xs'
                 onClick={() => {
                     onToggleUnits();
                     setIsDropdownOpen(false);
@@ -78,37 +81,52 @@ export default function Header({ units, onToggleUnits }: HeaderProps) {
 
                 </button>
               </div>
+              
 
-
-
-              {/* <div className="space-y-4 border-t border-white/5 pt-3"> */}
-                {/* Temperature Settings Block */}
-                <div>
-                  <div className="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1.5">
-                    Temperature
-                  </div>
-                  <div className="space-y-1">
-                    <button
-                      onClick={() => handleUnitSelection("metric")}
-                      className={`w-full flex items-center justify-between px-3 py-1.5 rounded text-left ${
-                        units === "metric" ? "bg-white/10 font-medium text-white" : "text-gray-300 hover:bg-white/5"
-                      } transition-colors`}
-                    >
-                      <span>Celsius (&deg;C)</span>
-                      {units === "metric" && <Image src={checkmarkIcon} alt="Selected" className="size-3.5" />}
-                    </button>
-                    <button
-                      onClick={() => handleUnitSelection("imperial")}
-                      className={`w-full flex items-center justify-between px-3 py-1.5 rounded text-left ${
-                        units === "imperial" ? "bg-white/10 font-medium text-white" : "text-gray-300 hover:bg-white/5"
-                      } transition-colors`}
-                    >
-                      <span>Fahrenheit (&deg;F)</span>
-                      {units === "imperial" && <Image src={checkmarkIcon} alt="Selected" className="size-3.5" />}
-                    </button>
-                  </div>
+              <div>
+                <div className='text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1.5'>
+                  {/* titlle */}
+                  Temperature
                 </div>
 
+                <div className='space-y-2'>
+                  {/* button */}
+                  <button
+                 className={`w-full px-3 py-1.5 rounded text-left ${
+                        units === "metric" ? "bg-white/10 font-medium text-white" : "text-gray-300 hover:bg-white/10"
+                      } `}
+                  onClick={() => handleUnitSelection("metric")}
+                  >
+                    
+                    <span>Celsius (&deg; C)</span>
+                    {units === "metric" && 
+                    <Image 
+                    src={checkmarkIcon} 
+                    alt="Selected" 
+                    className="size-3.5" />
+                    }
+                  </button>
+
+                   <button
+                 className={`w-full px-3 py-1.5 rounded text-left ${
+                        units === "imperial" ? "bg-white/10 font-medium text-white" : "text-gray-300 hover:bg-white/10"
+                      } `}
+                  onClick={() => handleUnitSelection("imperial")}
+                  >
+                    
+                    <span>Fahrenheit (&deg;F)</span>
+                    {units === "imperial" && 
+                    <Image 
+                    src={checkmarkIcon} 
+                    alt="Selected" 
+                    className="size-3.5" />
+                    }
+                  </button>
+
+                  
+                </div>
+
+              </div>
 
 
 
@@ -116,10 +134,7 @@ export default function Header({ units, onToggleUnits }: HeaderProps) {
 
 
 
-
-
-
-                {/* Wind Metrics Settings Block */}
+              {/* Wind Metrics Settings Block */}
                 <div>
                   <div className="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1.5">
                     Wind Speed
@@ -132,7 +147,11 @@ export default function Header({ units, onToggleUnits }: HeaderProps) {
                       } transition-colors`}
                     >
                       <span>km/h</span>
-                      {units === "metric" && <Image src={checkmarkIcon} alt="Selected" className="size-3.5" />}
+                      {units === "metric" && 
+                      <Image src={checkmarkIcon} 
+                      alt="Selected" 
+                      className="size-3.5" />
+                      }
                     </button>
                     <button
                       onClick={() => handleUnitSelection("imperial")}
@@ -141,7 +160,11 @@ export default function Header({ units, onToggleUnits }: HeaderProps) {
                       } transition-colors`}
                     >
                       <span>mph</span>
-                      {units === "imperial" && <Image src={checkmarkIcon} alt="Selected" className="size-3.5" />}
+                      {units === "imperial" && 
+                      <Image src={checkmarkIcon} 
+                      alt="Selected" 
+                      className="size-3.5" />
+                      }
                     </button>
                   </div>
                 </div>
@@ -159,7 +182,11 @@ export default function Header({ units, onToggleUnits }: HeaderProps) {
                       } transition-colors`}
                     >
                       <span>Millimeters (mm)</span>
-                      {units === "metric" && <Image src={checkmarkIcon} alt="Selected" className="size-3.5" />}
+                      {units === "metric" && 
+                      <Image src={checkmarkIcon} 
+                      alt="Selected" 
+                      className="size-3.5" />
+                      }
                     </button>
                     <button
                       onClick={() => handleUnitSelection("imperial")}
@@ -168,14 +195,14 @@ export default function Header({ units, onToggleUnits }: HeaderProps) {
                       } transition-colors`}
                     >
                       <span>Inches (in)</span>
-                      {units === "imperial" && <Image src={checkmarkIcon} alt="Selected" className="size-3.5" />}
+                      {units === "imperial" && 
+                      <Image src={checkmarkIcon} 
+                      alt="Selected" 
+                      className="size-3.5" />
+                      }
                     </button>
                   </div>
                 </div>
-              {/* </div> */}
-
-
-
 
 
 
