@@ -53,7 +53,7 @@ export default function Header({ units, onToggleUnits }: HeaderProps) {
           alt="Weather Units"
           className='inline-block mr-2 '
           />
-          units 
+          Units 
           <Image 
           src={dropdown}
           alt="dropdown"
@@ -92,7 +92,7 @@ export default function Header({ units, onToggleUnits }: HeaderProps) {
                 <div className='space-y-2'>
                   {/* button */}
                   <button
-                 className={`w-full px-3 py-1.5 rounded text-left ${
+                 className={`w-full px-3 py-1.5 rounded text-left flex items-center justify-between    ${
                         units === "metric" ? "bg-white/10 font-medium text-white" : "text-gray-300 hover:bg-white/10"
                       } `}
                   onClick={() => handleUnitSelection("metric")}
@@ -108,7 +108,7 @@ export default function Header({ units, onToggleUnits }: HeaderProps) {
                   </button>
 
                    <button
-                 className={`w-full px-3 py-1.5 rounded text-left ${
+                 className={`w-full px-3 py-1.5 rounded text-left flex items-center justify-between ${
                         units === "imperial" ? "bg-white/10 font-medium text-white" : "text-gray-300 hover:bg-white/10"
                       } `}
                   onClick={() => handleUnitSelection("imperial")}

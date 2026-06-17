@@ -63,7 +63,7 @@ export default function Home() {
   <div className="min-h-screen text-white">
     <div className="container mx-auto px-4 py-6 max-w-7xl">
 
-      <Header />
+      <Header units={units} onToggleUnits={toggleUnits} />
       
     </div>
     
